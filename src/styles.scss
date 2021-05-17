@@ -1,0 +1,90 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Raleway");
+
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+$bg-color: #fff;
+$light-text: #fff;
+$primary-color: rgba(91, 122, 178, 1);
+$secondary-color: rgba(250, 226, 195, 0.6);
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: gray;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+body {
+  background-color: $bg-color;
+  font-family: "Raleway", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+h1,
+h2 {
+  font-family: "Libre Baskerville", serif;
+}
+
+h1 {
+  font-size: 1.8rem;
+}
+
+h2 {
+  padding-top: 1.5rem;
+  line-height: 2rem;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+img {
+  max-width: 100%;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+    padding: 0 1.5rem;
+  }
+  
+  .centered {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .hidden {
+    display: none;
+  }

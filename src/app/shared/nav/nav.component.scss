@@ -1,0 +1,101 @@
+@import '../../../styles.scss';
+
+.cart__span {
+    display: none;
+    width: 50px;
+    height: auto;
+  }
+
+  .logo__img {
+    width: 20vw;
+    height: auto;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 10vw;
+    &__menu-btn {
+      display: flex;
+      height: 20vw;
+      cursor: pointer;
+    }
+    &__list {
+      display: none;
+    }
+  }
+
+
+  @media (min-width: $sm) {
+    .nav {
+      &__menu-btn {
+        width: 5vw;
+        height: 5vw;
+      }
+      .logo__img {
+        width: 15vw;
+        height: 15vw;
+      }
+      .cart {
+        &__span {
+          display: block;
+          width: 7vw;
+          height: 7vw;
+        }
+        &__link {
+          display: none;
+        }
+      }
+    }
+}
+
+@media (min-width: $lg) {
+
+    .box {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+      }
+      .box:first-child > span {
+        margin-right: auto;
+      }
+      .box:last-child > span {
+        margin-left: auto;
+      }
+      .nav {
+        display: flex;
+        &__menu-btn {
+          display: none;
+        }
+        &__list {
+          display: flex;
+          list-style: none;
+        }
+        &__item {
+          margin-right: 4rem;
+          &--login {
+            display: none;
+          }
+        }
+        .logo__img {
+          width: 5rem;
+          height: 5rem;
+        }
+        .cart {
+          &__span {
+            display: flex;
+            align-items: center;
+          }
+          &__img {
+            display: block;
+            width: 2rem;
+            height: 2rem;
+          }
+          &__link {
+            display: flex;
+            margin-right: 4rem;
+          }
+        }
+      }
+}
