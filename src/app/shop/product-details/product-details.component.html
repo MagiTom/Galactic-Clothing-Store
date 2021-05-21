@@ -1,0 +1,34 @@
+
+  <section class="details">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+            <img [src]="product.imageUrl">
+          </div>
+        <div class="col">
+           
+            <h4>{{product.category}}</h4>
+          <h2>{{ product.name }}</h2>
+          <p class="description">
+            {{product.description}}
+          </p>
+          <div class="size">
+              <p>Size</p>
+              <p>{{product.size}}</p>
+          </div>
+          <div class="color">
+            <p>Color</p>
+            <p>{{ product.color }}</p>
+        </div>
+        
+        <app-price-counter (addNumberItems)="addQuantity($event, product)" [priceProduct]="product.price" [value]="value"></app-price-counter>
+
+       <div class="button">
+        <button (click)="addToCart()">Add to cart</button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <button [routerLink]="['/cart']">go to the cart</button>

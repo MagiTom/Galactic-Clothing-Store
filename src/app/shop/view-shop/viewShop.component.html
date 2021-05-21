@@ -1,0 +1,69 @@
+
+  <section class="shop">
+    <div class="container">
+      <h1>Our Products</h1>
+        <div class="row">
+          <div class="col">
+            <h3>-30% for man t-shirt</h3>
+            <p>
+              Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna
+            </p>
+            <button></button>
+          </div>
+          <div class="col">
+            <div class="shop__image"></div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <section class="products">
+
+    <h3>For man.</h3>
+
+
+    <div class="products__man">
+
+      <app-product-card *ngFor="let product of productsForMan" [id]="product.id" [imageUrl]="product.imageUrl" [product]="product">
+
+        <div cardTitle>{{product.name}}</div>
+      
+      </app-product-card>
+
+    </div>
+
+    </section>
+
+
+    
+  <section class="products">
+
+    <h3>For Woman.</h3>
+
+    <div class="products__woman">
+    
+      <app-product-card *ngFor="let product of productsForWoman" [id]="product.id" [imageUrl]="product.imageUrl" [product]="product">
+
+        <div cardTitle>{{product.name}}</div>
+      
+      </app-product-card>
+
+    </div>
+
+  </section>
+
+  <section class="products">
+
+    <h3>For Children.</h3>
+
+    <div class="products__children">
+    
+      <app-product-card *ngFor="let product of productsForChildren" [id]="product.id" [imageUrl]="product.imageUrl" [product]="product">
+
+        <div cardTitle>{{product.name}}</div>
+      
+      </app-product-card>
+
+    </div>
+
+  </section>

@@ -1,0 +1,8 @@
+  <div class="price">
+            <div class="number">
+             <button (click)="decrease()">-</button>
+            <input oninput="validity.valid||(value='1')" [ngModel]="value" (ngModelChange)="recounting($event)" type="number" [value]="value" min=1>
+              <button (click)="increase()">+</button>
+            </div>
+            <h3 #price class="amount">{{ priceProduct * value | currency:'EUR' }}</h3>
+</div>

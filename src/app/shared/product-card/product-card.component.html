@@ -1,0 +1,9 @@
+
+      <div [routerLink]="['/products', product.id]" class="card">
+        <div class="card__body">
+          <div class="card__header"><ng-content select="[cardTitle]"></ng-content></div>
+          <button (click)="addToCart(product, $event)">cart</button>
+          <button [routerLink]="['/products', product.id]">show</button>
+        </div>
+        <img [src]="imageUrl">
+    </div>
