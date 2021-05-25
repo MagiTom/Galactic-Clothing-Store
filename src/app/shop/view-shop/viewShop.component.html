@@ -4,11 +4,11 @@
       <h1>Our Products</h1>
         <div class="row">
           <div class="col">
-            <h3>-30% for man t-shirt</h3>
+            <h3>-30% for woman's t-shirt</h3>
             <p>
               Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna
             </p>
-            <button></button>
+            <button (click)="woman.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'start' })">Shop Now!</button>
           </div>
           <div class="col">
             <div class="shop__image"></div>
@@ -40,7 +40,7 @@
 
     <h3>For Woman.</h3>
 
-    <div class="products__woman">
+    <div class="products__woman" #woman>
     
       <app-product-card *ngFor="let product of productsForWoman" [id]="product.id" [imageUrl]="product.imageUrl" [product]="product">
 

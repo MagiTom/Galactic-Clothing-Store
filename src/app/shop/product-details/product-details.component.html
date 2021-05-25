@@ -21,14 +21,13 @@
             <p>{{ product.color }}</p>
         </div>
         
-        <app-price-counter (addNumberItems)="addQuantity($event, product)" [priceProduct]="product.price" [value]="value"></app-price-counter>
+        <app-price-counter (addNumberItems)="addQuantity($event, product)" [priceProduct]="product.price" [value]="product.number"></app-price-counter>
 
        <div class="button">
-        <button (click)="addToCart()">Add to cart</button>
+        <button *ngIf="!isInCart" (click)="addToCart()">Add to cart</button>
+        <button *ngIf="isInCart" [routerLink]="['/cart']">Go to cart</button>
         </div>
         </div>
       </div>
     </div>
   </section>
-
-  <button [routerLink]="['/cart']">go to the cart</button>

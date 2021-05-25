@@ -1,0 +1,51 @@
+@import '../../../styles.scss';
+
+
+.row {
+    @include totalCenter();
+    margin: 1em;
+
+.col{
+    @include totalCenter();
+}
+
+.col:last-child{
+    margin-top: 2em;
+}
+
+button{
+    margin-top: 1em;
+}
+
+h1{
+
+    font-size: 1.5rem;
+}
+}
+
+.btns{
+    @include totalCenter(row);
+
+}
+
+
+
+@media (min-width: $md){
+    .row{
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 2em;
+
+        .col{
+            width: 50%;
+        }
+
+        .col:last-child{
+            margin-top: 0;
+        }
+
+        .col:first-child{
+            border-right: 1px solid rgba(0,0,0,0.2);
+        }
+    }    
+}

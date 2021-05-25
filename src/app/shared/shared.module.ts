@@ -7,13 +7,17 @@ import { AppRoutingModule } from '../app-routing.module';
 import {CartService } from './cart.service';
 import { PriceCounterComponent } from './price-counter/price-counter.component';
 import { FormsModule } from '@angular/forms';
+import { LoginFormComponent } from './login-form/login-form.component';
+import { ButtonBackComponent } from './button-back/button-back.component';
 
 @NgModule({
   declarations: [
     NavComponent,
     FooterComponent,
     ProductCardComponent,
-    PriceCounterComponent
+    PriceCounterComponent,
+    LoginFormComponent,
+    ButtonBackComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +25,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   
   ],
-  exports: [NavComponent, FooterComponent, ProductCardComponent, PriceCounterComponent],
+  exports: [NavComponent, FooterComponent, ProductCardComponent, PriceCounterComponent, LoginFormComponent, ButtonBackComponent],
   providers: [
     CartService
   ],

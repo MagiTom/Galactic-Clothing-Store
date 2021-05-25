@@ -1,100 +1,9 @@
 <h1 id="cart">Cart</h1>
 
-<!-- <section class="cart">
-
-
-<div class="table">
-<p class="table__header">Product</p>
-<p class="table__header">Quantity</p>
-<p class="table__header">Total amount</p>
-
-
-<div *ngFor="let product of products" class="products">
-<div class="product">
-<img [src]="product.imageUrl">
-<div class="info">
-<h4>{{product.name}}</h4>
-<p>{{product.size}}</p>
-<h3>{{product.price | currency:'EUR'}}</h3>
-<p>Remove</p>
-</div>
-</div>
-
-<div class="counter">
- <app-price-counter [priceProduct]="product.price" [value]="product.number"></app-price-counter>
-</div>
-</div>
-
-
-<div class="total">
-<p>Total:</p>
-<p>50EUR</p>
-</div>
-
-</div>
-</section> -->
-
-
-
-<!-- <section class="cart">
-
-
-    <div class="table">
-        <p class="table__header">Product</p>
-        <p class="table__header">Quantity</p>
-        <p class="table__header">Total amount</p>
-
-
-        <div class="products">
-            <div *ngFor="let product of products" class="product">
-                <div class="product-wrapper">
-                    <img [src]="product.imageUrl">
-                    <div class="info">
-                        <h4>Mans Tshirt</h4>
-                        <p>One size</p>
-                        <h3>{{30 | currency:'EUR'}}</h3>
-                        <p>Remove</p>
-                    </div>
-                </div>
-                <div class="counter">
-                    <app-price-counter></app-price-counter>
-                </div>
-            </div>
-
-
-
-            <div class="product">
-                <div class="product-wrapper">
-                    <img src="../../../assets/img/shop_product1.jpg">
-                    <div class="info">
-                        <h4>Mans Tshirt</h4>
-                        <p>One size</p>
-                        <h3>{{30 | currency:'EUR'}}</h3>
-                        <p>Remove</p>
-                    </div>
-                </div>
-                <div class="counter">
-                    <app-price-counter></app-price-counter>
-                </div>
-            </div>
-
-
-        </div>
-
-
-        <div class="total">
-            <p>Total:</p>
-            <p>50EUR</p>
-        </div>
-
-    </div>
-</section> -->
-
-
 <section class="cart">
 
 
-    <div class="table">
+    <div *ngIf="products.length > 0" class="table">
         <p class="table__header">Product</p>
         <p class="table__header">Quantity</p>
         <p class="table__header">Total amount</p>
@@ -108,22 +17,28 @@
                         <h4>{{product.name}}</h4>
                         <p>{{product.size}}</p>
                         <h3>{{product.price | currency:'EUR'}}</h3>
-                        <p>Remove</p>
+                        <p (click)="removeItem(product)">Remove</p>
                     </div>
                 </div>
                 <div class="counter">
                     <app-price-counter (addNumberItems)="addQuantity($event, product)" [priceProduct]="product.price" [value]="product.number"></app-price-counter>
                 </div>
             </div>
-
-
         </div>
-
 
         <div class="total">
             <p>Total:</p>
             <p>{{sum | currency:'EUR'}}</p>
         </div>
+        <button [routerLink]="['/loginStep']">Continue</button>
 
     </div>
+
+    <div *ngIf="products.length === 0" class="empty">Cart is empty</div>
 </section>
+
+<div class="back">
+
+    <app-button-back></app-button-back>
+
+</div>

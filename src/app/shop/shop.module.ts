@@ -7,13 +7,19 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { CartService } from '../shared/cart.service';
-import { CartComponent } from './cart/cart.component'
+import { CartComponent } from './cart/cart.component';
+import { LoginStepComponent } from './login-step/login-step.component';
+import { ShippingComponent } from './shipping/shipping.component';
+import { SummaryComponent } from './summary/summary.component'
 
 @NgModule({
   declarations: [
     ViewShopComponent,
     ProductDetailsComponent,
     CartComponent,
+    LoginStepComponent,
+    ShippingComponent,
+    SummaryComponent,
   ],
   imports: [
     CommonModule,

@@ -12,6 +12,13 @@ $light-text: #fff;
 $primary-color: rgba(91, 122, 178, 1);
 $secondary-color: rgba(250, 226, 195, 0.6);
 
+@mixin totalCenter($direction:column) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+
 *,
 *:before,
 *:after {

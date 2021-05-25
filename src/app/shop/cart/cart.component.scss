@@ -48,7 +48,7 @@
 
     .info p:last-of-type{
         width: fit-content;
-        margin-top:50%;
+        margin-top:20%;
         border-bottom: 1px solid; 
     }
 
@@ -58,7 +58,7 @@
     }
    
 
-     .total{
+     .total, button{
          grid-column: 1/-1;
         justify-self: end;
          display:flex;
@@ -73,13 +73,25 @@
             font-weight: 900;
          }
      }
-    
 }
 
+.empty{
+    text-align: center;
+    font-size: 3rem;
+    padding: 1em;
+    border-top: 1px solid rgba(0,0,0,0.2);
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
 
 img{
     width: 100px;
-    height: 200px;
+    height: 150px;
+    object-fit: contain;
+}
+
+.back{
+    @include totalCenter();
+    margin-top: 1em;
 }
 
 
@@ -103,6 +115,7 @@ img{
     .info h3{
         display: none;
     }
+
 }
 
 @media(max-width:$md){
@@ -127,11 +140,10 @@ img{
         margin-top:0.6rem !important;
     }
 
-    .total{
+    .total, button{
         grid-column: 1/-1;
-        justify-self: start !important;
         display:flex;
-        justify-content: flex-start;
+         margin: 0 auto;
     }
 
 }
