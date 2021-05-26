@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductCardComponent } from './product-card/product-card.component';
-import { AppRoutingModule } from '../app-routing.module';
+// import { AppRoutingModule } from '../app-routing.module';
+import { RouterModule } from '@angular/router';
 import {CartService } from './cart.service';
 import { PriceCounterComponent } from './price-counter/price-counter.component';
 import { FormsModule } from '@angular/forms';
@@ -21,8 +22,9 @@ import { ButtonBackComponent } from './button-back/button-back.component';
   ],
   imports: [
     CommonModule,
-    AppRoutingModule,
-    FormsModule
+    // AppRoutingModule,
+    FormsModule,
+    RouterModule
   
   ],
   exports: [NavComponent, FooterComponent, ProductCardComponent, PriceCounterComponent, LoginFormComponent, ButtonBackComponent],

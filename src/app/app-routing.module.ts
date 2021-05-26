@@ -7,23 +7,30 @@ import { CartComponent } from './shop/cart/cart.component';
 import { LoginStepComponent } from './shop/login-step/login-step.component';
 import { ShippingComponent } from './shop/shipping/shipping.component';
 import { SummaryComponent } from './shop/summary/summary.component';
+import { CommonModule } from '@angular/common';
+import { CartViewComponent } from './shop/cart-view/cart-view.component';
 
 const routes: Routes = [
   {
     path:"",
-    component:ViewComponent
+    component:ViewComponent, pathMatch: 'full'
   },
-  {path: 'shop', component: ViewShopComponent},
+  {path: 'shop', loadChildren: () => import('./shop/shop.module').then( m => m.ShopModule)},
+
   {path: 'products/:productId', component: ProductDetailsComponent},
-  {path: 'cart', component: CartComponent},
-  {path: 'loginStep', component: LoginStepComponent},
-  {path: 'shipping', component: ShippingComponent},
-  {path: 'summary', component: SummaryComponent},
- 
+
+  {path: 'cart', component: CartViewComponent, children: [
+    {path: '', component: CartComponent},
+    {path: 'loginStep', component: LoginStepComponent},
+    {path: 'shipping', component: ShippingComponent},
+    {path: 'summary', component: SummaryComponent},
+  ]},
+
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes),
+  CommonModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
