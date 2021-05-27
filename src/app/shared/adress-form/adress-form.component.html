@@ -1,0 +1,30 @@
+
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  
+
+
+      <app-input inputType="text" label="First Name" [control]="profileForm.get('firstName')"></app-input>
+  
+
+    <app-input inputType="text" label="Last Name" [control]="profileForm.get('lastName')"></app-input>
+   
+
+    <div formGroupName="address">
+      <h4>Adress</h4>
+
+        <app-input inputType="text" label="Street" [control]="profileForm.get('address.street')"></app-input>
+      
+
+        <app-input inputType="text" label="City" [control]="profileForm.get('address.city')"></app-input>
+        
+
+        <app-input inputType="text" label="State" [control]="profileForm.get('address.state')"></app-input>
+      
+
+        <app-input inputType="text" label="Zip Code" [control]="profileForm.get('address.zip')"></app-input>
+      </div>
+
+      <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+  </form>
+
+ 

@@ -3,13 +3,28 @@
 
         <h1>Adress</h1>
 
+        <app-adress-form></app-adress-form>
     </div>
 
     <div class="col">
        <h1>Choose shipping</h1>
-    </div>
+
+       <form>
+       <select class="shipping" name="shipping" required  #courier="ngModel" [(ngModel)]="choosenShipping">
+        <option value="Choose a shipping" selected hidden>--shipping--</option>
+        <option *ngFor="let ship of shipping">{{ship.company}}: {{ship.price}}</option>
+    </select>
+    <div *ngIf="courier.invalid && courier.touched"
+    class="alert">
+  <div *ngIf="courier.errors.required">
+    Shipping is required.
+  </div>
+</div>
+</form>
+
 </div>
 
+</div>
 <div class="btns">
     <app-button-back></app-button-back>
     <button [routerLink]="['../summary']">Continue</button>

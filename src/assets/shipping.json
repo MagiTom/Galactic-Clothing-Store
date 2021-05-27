@@ -1,0 +1,14 @@
+[
+    {
+      "company": "Fedex",
+      "price": 5.55
+    },
+    {
+      "company": "DHL",
+      "price": 3.48
+    },
+    {
+      "company": "Inpost",
+      "price": 2.99
+    }
+  ]
