@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormsService } from 'src/app/shared/forms.service';
 
 
 @Component({
@@ -8,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginStepComponent implements OnInit {
 
-  constructor() { }
+logged:boolean = false;
+
+  constructor(private formsService: FormsService) { }
 
   ngOnInit(): void {
+    this.formsService.isLogged.subscribe(res => {
+      this.logged = res;
+    })
   }
 
 }

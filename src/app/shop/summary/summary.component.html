@@ -7,12 +7,14 @@
 
         <h1>Shipping</h1>
         <div class="adress">
+            <p>First Name: {{ adressInfo.firstName }}</p>
+            <p>Last Name: {{ adressInfo.lastName }}</p>
             <h3>Adress:</h3>
-            <p>Street: oooooo</p>
-            <p>City: oooooo</p>
+            <p>Street: {{ adressInfo.street }}</p>
+            <p>City: {{ adressInfo.city }}</p>
+            <p>Zip-Code: {{ adressInfo.zip }}</p>
             <h3>Method of Shipping:</h3>
-            <p>FEDEX</p>
-
+            <p>{{shipping.company}}</p>
         </div>
 
     </div>
@@ -26,7 +28,7 @@
        </div>
     </div>
        <p>Total price: <span>30eur</span></p>
-       <p>Shipping: <span>30eur</span></p>
+       <p>Shipping: <span>{{shipping.price | currency: 'EUR'}}</span></p>
        <p>Payment: <span>30eur</span></p>
     </div>
 </div>

@@ -10,9 +10,9 @@
        <h1>Choose shipping</h1>
 
        <form>
-       <select class="shipping" name="shipping" required  #courier="ngModel" [(ngModel)]="choosenShipping">
-        <option value="Choose a shipping" selected hidden>--shipping--</option>
-        <option *ngFor="let ship of shipping">{{ship.company}}: {{ship.price}}</option>
+       <select class="shipping" name="shipping" required  #courier="ngModel" [(ngModel)]="choosenShipping" (change)="chooseShipping($event.target.value)">
+        <option selected hidden [value]="undefined">-- shipping --</option>
+        <option *ngFor="let ship of shipping; index as i" [value]="i">{{ship.company}}: {{ship.price}}</option>
     </select>
     <div *ngIf="courier.invalid && courier.touched"
     class="alert">

@@ -9,8 +9,11 @@ import { ShippingComponent } from './shop/shipping/shipping.component';
 import { SummaryComponent } from './shop/summary/summary.component';
 import { CommonModule } from '@angular/common';
 import { CartViewComponent } from './shop/cart-view/cart-view.component';
+import { LoginPageComponent } from './login/login-page/login-page.component';
+import { SignUpComponent } from './login/sign-up/sign-up.component';
 
 const routes: Routes = [
+
   {
     path:"",
     component:ViewComponent, pathMatch: 'full'
@@ -18,6 +21,8 @@ const routes: Routes = [
   {path: 'shop', loadChildren: () => import('./shop/shop.module').then( m => m.ShopModule)},
 
   {path: 'products/:productId', component: ProductDetailsComponent},
+  {path: 'login', component: LoginPageComponent},
+  {path: 'signup', component: SignUpComponent},
 
   {path: 'cart', component: CartViewComponent, children: [
     {path: '', component: CartComponent},
@@ -25,6 +30,8 @@ const routes: Routes = [
     {path: 'shipping', component: ShippingComponent},
     {path: 'summary', component: SummaryComponent},
   ]},
+
+
 
 ];
 

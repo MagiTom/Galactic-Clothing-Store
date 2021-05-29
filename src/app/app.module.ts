@@ -11,6 +11,7 @@ import { SharedModule } from './shared/shared.module';
 import { ShopModule } from './shop/shop.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginModule } from './login/login.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomeModule,
     ShopModule,
     AboutModule,
+    LoginModule,
     CommonModule,
     HttpClientModule,
     FormsModule,

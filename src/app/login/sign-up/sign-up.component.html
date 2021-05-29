@@ -1,0 +1,21 @@
+<div class="sign">
+
+    <div class="signup__form">
+    
+        <h1>Sign up</h1>
+
+        <div class="address">
+        <app-adress-form></app-adress-form>
+      </div>
+
+        <form [formGroup]="signupForm">
+            <app-input inputType="email" label="Email" [control]="signupForm.get('email')"></app-input>
+            <app-input inputType="password" label="Password" [control]="signupForm.get('password')"></app-input>
+            <app-input inputType="password" label="Password" [control]="signupForm.get('confirmPassword')"></app-input>
+
+            <div *ngIf="signupForm.get('confirmPassword').errors?.confirmedValidator && signupForm.get('confirmPassword').touched">Password and Confirm Password must be match.</div>
+            <button routerLink="/login" [disabled]="!adressIsValid || !signupForm.valid" type="submit" (click)="onSignUp($event)">sign up</button>
+        </form>
+    
+    </div>
+    </div>

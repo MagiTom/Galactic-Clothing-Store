@@ -1,30 +1,30 @@
 
-<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="profileForm">
   
 
 
-      <app-input inputType="text" label="First Name" [control]="profileForm.get('firstName')"></app-input>
+      <app-input (inputValue)="model.firstName = $event" inputType="text" label="First Name" [control]="profileForm.get('firstName')"></app-input>
   
 
-    <app-input inputType="text" label="Last Name" [control]="profileForm.get('lastName')"></app-input>
+    <app-input (inputValue)="model.lastName = $event" inputType="text" label="Last Name" [control]="profileForm.get('lastName')"></app-input>
    
 
     <div formGroupName="address">
       <h4>Adress</h4>
 
-        <app-input inputType="text" label="Street" [control]="profileForm.get('address.street')"></app-input>
+        <app-input (inputValue)="model.street = $event" inputType="text" label="Street" [control]="profileForm.get('address.street')"></app-input>
       
 
-        <app-input inputType="text" label="City" [control]="profileForm.get('address.city')"></app-input>
+        <app-input (inputValue)="model.city = $event" inputType="text" label="City" [control]="profileForm.get('address.city')"></app-input>
         
 
-        <app-input inputType="text" label="State" [control]="profileForm.get('address.state')"></app-input>
+        <app-input (inputValue)="model.state = $event" inputType="text" label="State" [control]="profileForm.get('address.state')"></app-input>
       
 
-        <app-input inputType="text" label="Zip Code" [control]="profileForm.get('address.zip')"></app-input>
+        <app-input (inputValue)="model.zip = $event" inputType="text" label="Zip Code" [control]="profileForm.get('address.zip')"></app-input>
       </div>
 
-      <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+      <!-- <button type="submit" [disabled]="!profileForm.valid">Submit</button> -->
   </form>
 
  

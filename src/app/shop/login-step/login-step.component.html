@@ -1,10 +1,16 @@
 
 
 <div class="row">
-    <div class="col">
+    <div *ngIf="!logged" class="col">
 
         <app-login-form></app-login-form>
         <button [routerLink]="['../shipping']">Continue without login</button>
+
+    </div>
+
+    <div *ngIf="logged" class="col">
+
+        <h1 class="logged-info">Logged!</h1>
 
     </div>
 
@@ -19,6 +25,7 @@
 <div class="back">
 
     <app-button-back></app-button-back>
+    <button [routerLink]="['../shipping']" [disabled]="!logged">Continue</button>
 
 </div>
 
