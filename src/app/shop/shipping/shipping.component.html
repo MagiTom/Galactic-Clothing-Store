@@ -27,5 +27,5 @@
 </div>
 <div class="btns">
     <app-button-back></app-button-back>
-    <button [routerLink]="['../summary']">Continue</button>
+    <button [disabled]="!adressIsValid || !choosenShipping" [routerLink]="['../summary']">Continue</button>
     </div>

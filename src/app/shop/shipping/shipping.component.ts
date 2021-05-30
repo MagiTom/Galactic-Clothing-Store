@@ -10,7 +10,8 @@ import { FormsService } from 'src/app/shared/forms.service';
 export class ShippingComponent implements OnInit, OnDestroy {
 
   shipping:any;
-  choosenShipping:boolean;
+  choosenShipping:any;
+  adressIsValid:boolean;
 
   constructor(private cartService: CartService, private formsService: FormsService) { }
 
@@ -19,16 +20,24 @@ export class ShippingComponent implements OnInit, OnDestroy {
       this.shipping = Array.from(data);
       console.log(this.shipping)
     })
+
+    this.infoAboutValid();
   }
 
   ngOnDestroy(){
    
   }
 
-  chooseShipping(index){
+  chooseShipping(index:number){
   
     this.choosenShipping = this.shipping[index];
     this.formsService.sentShiping(this.choosenShipping);
+  }
+
+  infoAboutValid(){
+    this.formsService.isValid.subscribe(res => {
+      this.adressIsValid = res;
+    })
   }
 
 }

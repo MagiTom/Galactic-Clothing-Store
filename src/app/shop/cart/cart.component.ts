@@ -19,37 +19,24 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
    this.products = this.cartService.getItems();
    console.log(this.products);
-
-   if(this.products.length > 0){
-    this.getTotal();
-   }
+    this.getTotalPice();
+   
   }
 
   addQuantity(value:number, product:Product){
     product.number = value;
-    // this.total = product.price * value;
-    this.getTotal();
+    this.sum = this.cartService.getTotal();
   }
 
-  getTotal(){
-    this.totalAmount = [];
-    this.products.forEach(product =>{
-      this.total = product.price * product.number;
-      this.totalAmount.push(this.total);
-    })
-
-    console.log(this.totalAmount)
-  
-    this.sum = this.totalAmount.reduce(function(a, b) {
-      return a + b;
-    });
-    console.log(this.sum)
+  removeProduct(item:Product){
+    this.cartService.removeItem(item);
+    this.getTotalPice();
   }
 
-  removeItem(item:Product){
-    const index = this.products.indexOf(item);
-    this.products.splice(index, 1);
-    item.number = 1;
-    this.getTotal();
+  getTotalPice(){
+    if(this.products.length > 0){
+      this.sum = this.cartService.getTotal();
+     }
   }
+
 }

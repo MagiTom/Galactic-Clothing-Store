@@ -1,8 +1,6 @@
-
-
 <h1>Summmary</h1>
 
-<div class="row">
+<div *ngIf="!orderWasSent" class="row">
     <div class="col">
 
         <h1>Shipping</h1>
@@ -20,20 +18,26 @@
     </div>
 
     <div class="col">
-       <h1>Products</h1>
+        <h1>Products</h1>
 
-       <div class="products">
-       <div class="product">
-           1. T-shirt Star1 x 3
-       </div>
+        <div class="products">
+            <div *ngFor="let product of products; index as i" class="product">
+                <!-- 1. T-shirt Star1 x 3 -->
+                {{i+1}}. {{product.name}} x {{product.number}}
+            </div>
+        </div>
+        <p>Total price: <span>{{total | currency: 'EUR'}}</span></p>
+        <p>Shipping: <span>{{shipping.price | currency: 'EUR'}}</span></p>
+        <p>Payment: <span>{{total + shipping.price | currency: 'EUR'}}</span></p>
     </div>
-       <p>Total price: <span>30eur</span></p>
-       <p>Shipping: <span>{{shipping.price | currency: 'EUR'}}</span></p>
-       <p>Payment: <span>30eur</span></p>
-    </div>
+</div>
+
+<div *ngIf="orderWasSent" class="orderInfo">
+    <p>Your order was sent!</p>
 </div>
 
 <div class="btns">
     <app-button-back></app-button-back>
-    <button>Order</button>
-    </div>
+    <button *ngIf="!orderWasSent" (click)="order()">Order</button>
+    <button *ngIf="orderWasSent" routerLink="/">Go to the homepage</button>
+</div>
