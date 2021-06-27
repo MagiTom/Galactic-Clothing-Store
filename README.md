@@ -1,6 +1,52 @@
 # GalacticClothingStore
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.12.
+This is Angular open source project in which we are building small e-commerce website with shop. The shop will contain few different clothes for woman, man and children. It will be fully functional shop with front-end and back-end.
+
+In src/assets/img/ folder is project in pdf for this website. You don't have to do everything as in the project, because not everything is included in it (for example hovering effects, size of fonts, etc.).
+
+# Instruction
+
+Clone from develop branch:
+git clone --branch develop https://github.com/MagiTom/Galactic-Clothing-Store.git
+
+<b>1.</b> Create your own branch for this project and switch on it:
+git checkout -b
+
+<b>2.</b> In Visual Studio Code Terminal write:
+```bash
+npm install
+```
+
+<b>3.</b> Start your changes:
+```bash
+ng serve
+```
+
+<b>4.</b> Add your lokal changes on your branch
+```bash
+git add .
+```
+
+<b>5.</b> Commit it:
+```bash
+git commit -m"your message"
+```
+
+<b>6.</b> Sent this changes from your branch:
+```bash
+git push origin
+```
+
+<b>7.</b> In github sent pull request from your branch to branch develop in project
+
+<b>8.</b> Leader will check changes and merge branch
+
+<b>9.</b> When you start new changes pull (or fetch) chenges from repo:
+```bash
+git pull origin
+```
+
+<b>10.</b> Then do everything from point five.
 
 ## Development server
 
